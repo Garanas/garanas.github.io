@@ -1,8 +1,9 @@
+// SideBarMenu.tsx
 import { type FC } from 'react';
 import styles from './SideBarMenu.module.css';
 
 interface SideBarMenuProps {
-    activeItemId?: string;
+    currentPath: string;
 }
 
 const menuItems = [
@@ -21,14 +22,21 @@ const menuItems = [
     }
 ] as const;
 
-const SideBarMenu: FC<SideBarMenuProps> = ({ activeItemId }) => {
+const SideBarMenu: FC<SideBarMenuProps> = ({ currentPath }) => {
+    const isActive = (href: string) => {
+        if (href === '/') {
+            return currentPath === '/';
+        }
+        return currentPath.startsWith(href);
+    };
+
     return (
         <ul className={styles.menu}>
             {menuItems.map(({ id, label, href, ...rest }) => (
                 <li key={id}>
                     <a
                         className={`${styles.menuItem} ${
-                            activeItemId === id ? styles.active : ''
+                            isActive(href) ? styles.active : ''
                         }`.trim()}
                         id={id}
                         href={href}

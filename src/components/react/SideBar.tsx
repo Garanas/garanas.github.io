@@ -1,13 +1,14 @@
+// SideBar.tsx
 import { type FC } from 'react';
 import SideBarMenu from './SideBarMenu';
 import SideBarFooter from './SideBarFooter';
 import styles from './SideBar.module.css';
 
 interface SideBarProps {
-    sideBarActiveItemID?: string;
+    currentPath: string;
 }
 
-const SideBar: FC<SideBarProps> = ({ sideBarActiveItemID }) => {
+const SideBar: FC<SideBarProps> = ({ currentPath }) => {
     return (
         <div className={styles.drawerSide}>
             <label htmlFor="my-drawer" className={styles.drawerOverlay}></label>
@@ -17,7 +18,7 @@ const SideBar: FC<SideBarProps> = ({ sideBarActiveItemID }) => {
                         <div className={styles.avatar}>
                             <img
                                 className={styles.profileImage}
-                                src="/profile.webp"
+                                src="/profile-01.jpg"
                                 alt="Profile image"
                                 width={300}
                                 height={300}
@@ -26,7 +27,7 @@ const SideBar: FC<SideBarProps> = ({ sideBarActiveItemID }) => {
                     </a>
                 </div>
 
-                <SideBarMenu activeItemId={sideBarActiveItemID} />
+                <SideBarMenu currentPath={currentPath} />
                 <SideBarFooter />
             </aside>
         </div>
