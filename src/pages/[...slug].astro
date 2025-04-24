@@ -22,17 +22,9 @@ export async function getStaticPaths() {
 
 const { getTinaProps } = Astro.props;
 const data = await getTinaProps();
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={data.data.page.seoTitle} description={config.seo.description} />
-	</head>
-	<body>
-		<Header />
-				<Page {...data} client:tina />
-		<Footer />
-	</body>
-</html>
-
+<BaseLayout >
+	<Page {...data} client:tina />
+</BaseLayout>

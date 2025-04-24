@@ -1,5 +1,6 @@
 ---
-import config from "../content/config/config.json";
+import globalConfig from "../content/config/config.json";
+import contactConfig from "../content/contact/config.json";
 import IconLink from "./react/IconLink";
 const today = new Date();
 import styles from './Footer.module.css';
@@ -7,10 +8,10 @@ import styles from './Footer.module.css';
 
 <footer class={styles.copyrightFooter}>
     &copy; {today.getFullYear()}
-    {config.seo.siteOwner}. All rights reserved.
+    {globalConfig.seo.siteOwner}. All rights reserved.
     <div class={styles.socialLinks}>
         {
-            config?.contactLinks?.map((link) => {
+            contactConfig?.contact?.map((link) => {
                 return (
                         <IconLink {...link} />
                 );

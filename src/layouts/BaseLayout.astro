@@ -6,30 +6,27 @@ import Footer from '../components/Footer.astro';
 import SideBar from "../components/react/SideBar";
 import styles from '../layouts/BlogPost.module.css';
 
-type Props = CollectionEntry<'blog'>['data'];
-
 const { title, description } = Astro.props;
 const currentPath = Astro.url.pathname;
-
 ---
 
 <html lang="en" data-theme="lofi">
-	<head>
-		<BaseHead title={title} description={description} />
-	</head>
+<head>
+    <BaseHead title={title} description={description} />
+</head>
 
-	<body>
-		<div class={styles.drawer}>
-			<SideBar currentPath={currentPath} />
+<body>
+<div class={styles.drawer}>
+    <SideBar currentPath={currentPath} />
 
-			<div class={styles.drawerContent}>
-				<div class={styles.contentCenter}>
-					<main class={styles.main}>
-						<slot />
-					</main>
-				</div>
-				<Footer />
-			</div>
-		</div>
-	</body>
+    <div class={styles.drawerContent}>
+        <div class={styles.contentCenter}>
+            <main class={styles.main}>
+                <slot />
+            </main>
+        </div>
+        <Footer />
+    </div>
+</div>
+</body>
 </html>
