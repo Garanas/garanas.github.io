@@ -1,0 +1,19 @@
+{
+  "contact": [
+    {
+      "title": "Twitter",
+      "link": "https://x.com/tinacms",
+      "icon": "TbBrandTwitter"
+    },
+    {
+      "title": "Docs",
+      "link": "https://tina.io/docs",
+      "icon": "TbBook2"
+    },
+    {
+      "title": "GitHub",
+      "link": "https://github.com/tinacms/tinacms",
+      "icon": "TbBrandGithub"
+    }
+  ]
+}

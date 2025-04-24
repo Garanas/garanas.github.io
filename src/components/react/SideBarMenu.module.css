@@ -1,0 +1,17 @@
+.menu {
+    flex-grow: 1;           /* grow */
+    flex-shrink: 1;         /* shrink */
+    overflow-y: auto;
+}
+
+.menuItem {
+    padding-top: 0.75rem;   /* py-3 */
+    padding-bottom: 0.75rem;
+    font-size: 1rem;        /* text-base */
+    text-decoration: none;
+    display: block;
+}
+
+.active {
+    background-color: var(--base-300); /* bg-base-300 */
+}

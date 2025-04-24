@@ -1,0 +1,23 @@
+.social-icons {
+    padding-left: 1rem;      /* px-4 */
+    padding-right: 1rem;     /* px-4 */
+    padding-bottom: 1.25rem; /* pb-5 */
+    padding-top: 0.25rem;    /* pt-1 */
+    display: flex;           /* flex */
+    align-self: center;      /* self-center */
+    justify-content: center; /* justify-center */
+    position: sticky;        /* sticky */
+    bottom: 0;              /* bottom-0 */
+    background-color: var(--base-200); /* bg-base-200 */
+}
+
+.social-icons a {
+    margin-left: 0.75rem;    /* mx-3 */
+    margin-right: 0.75rem;   /* mx-3 */
+}
+
+.social-icons svg {
+    fill: currentColor;
+    width: 24px;
+    height: 24px;
+}

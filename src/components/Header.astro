@@ -2,8 +2,6 @@
 import HeaderLink from "./HeaderLink.astro";
 import config from "../content/config/config.json";
 import IconLink from "./react/IconLink";
-import { ShareButton } from './react/ShareButton';
-
 ---
 
 <header>
@@ -12,7 +10,7 @@ import { ShareButton } from './react/ShareButton';
 		<div class="internal-links">
 			{
 				config.nav.map((nav) => (
-					<HeaderLink href={import.meta.env.BASE_URL + nav.link}>{nav.title}</HeaderLink>
+					<HeaderLink href={nav.link}>{nav.title}</HeaderLink>
 				))
 			}
 		</div>

@@ -1,0 +1,48 @@
+.drawerSide {
+    z-index: 40;
+}
+
+.drawerOverlay {
+    /* Styles for the overlay will be handled by the drawer system */
+}
+
+.sidebar {
+    padding-left: 0.5rem;    /* px-2 */
+    padding-right: 0.5rem;   /* px-2 */
+    padding-top: 0.5rem;     /* pt-2 */
+    height: auto;
+    min-height: 100%;        /* min-h-full */
+    width: 19rem;            /* w-[19rem] */
+    background-color: var(--base-200);
+    color: var(--base-content);
+    display: flex;
+    flex-direction: column;
+}
+
+.profileContainer {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.25rem;     /* mt-5 */
+    margin-bottom: 1.5rem;   /* mb-6 */
+}
+
+.avatarLink {
+    display: block;
+    margin: auto;
+}
+
+.avatar {
+    transition: transform 0.2s ease-in-out;
+    width: 8.5rem;           /* w-[8.5rem] */
+}
+
+.avatar:hover {
+    transform: scale(1.02);  /* hover:scale-[102%] */
+}
+
+.profileImage {
+    border-radius: 50%;      /* mask mask-circle */
+    width: 100%;
+    height: auto;
+}

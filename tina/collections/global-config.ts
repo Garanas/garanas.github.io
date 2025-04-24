@@ -67,41 +67,5 @@ export const GlobalConfigCollection: Collection = {
         }
       ]
     },
-    {
-      name: "contactLinks",
-      label: "Contact Links",
-      type: "object",
-      list: true,
-      ui: {
-        itemProps: (item) => {
-          return {
-            label: item.title
-          }
-        },
-      },
-      fields: [
-        {
-          name: "title",
-          label: "Title",
-          type: "string"
-        },
-        {
-          name: "link",
-          label: "Link",
-          type: "string"
-        },
-        {
-          name: "icon",
-          label: "Icon",
-          type: "string",
-          ui: {
-            //@ts-ignore
-            component: IconComponent
-          }
-        }
-      ],
-    }
-
-    // Add other config fields here...
   ]
 }

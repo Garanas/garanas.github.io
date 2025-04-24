@@ -2,6 +2,7 @@ import { defineConfig } from "tinacms";
 import { BlogCollection } from "./collections/blog";
 import { GlobalConfigCollection } from "./collections/global-config";
 import { PageCollection } from "./collections/page";
+import {ContactCollection} from "./collections/contact.ts";
 
 // Your hosting provider likely exposes this as an environment variable
 const branch =
@@ -21,7 +22,7 @@ export default defineConfig({
   build: {
     outputFolder: "admin",
     publicFolder: "public",
-    basePath: "website-astro-tina"
+    basePath: ""
   },
   media: {
     tina: {
@@ -35,6 +36,7 @@ export default defineConfig({
       BlogCollection,
       PageCollection,
       GlobalConfigCollection,
+      ContactCollection,
     ],
   },
 });
