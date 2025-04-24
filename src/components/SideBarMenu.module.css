@@ -2,6 +2,7 @@
     flex-grow: 1;           /* grow */
     flex-shrink: 1;         /* shrink */
     overflow-y: auto;
+    height: 100%;
 
     list-style: none;
     margin: 0;

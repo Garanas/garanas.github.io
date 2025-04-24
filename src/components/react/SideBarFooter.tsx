@@ -1,7 +1,7 @@
-import { type FC } from 'react';
-import { BiCoffee } from 'react-icons/bi';
-import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa';
-import { RiRssFill } from 'react-icons/ri';
+import {type FC} from 'react';
+import {BiCoffee} from 'react-icons/bi';
+import {FaGithub, FaTwitter, FaLinkedin} from 'react-icons/fa';
+import {RiRssFill} from 'react-icons/ri';
 import styles from './SideBarFooter.module.css';
 
 const socialLinks = [
@@ -34,7 +34,7 @@ const socialLinks = [
 
 const SocialIcons: FC = () => (
     <div className={styles['social-icons']}>
-        {socialLinks.map(({ href, label, icon: Icon }) => (
+        {socialLinks.map(({href, label, icon: Icon}) => (
             <a
                 key={href}
                 href={href}
@@ -44,7 +44,7 @@ const SocialIcons: FC = () => (
                 title={label}
                 rel="noopener noreferrer"
             >
-                <Icon size={24} />
+                <Icon size={24}/>
             </a>
         ))}
     </div>
