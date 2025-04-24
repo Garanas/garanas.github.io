@@ -1,28 +1,11 @@
 ---
 // SideBarMenu.astro
 import styles from './SideBarMenu.module.css';
+import navigation from '../content/navigation/config.json';
 
-interface Props {
-    currentPath: string;
-}
+const currentPath = Astro.url.pathname;
 
-const { currentPath } = Astro.props;
 
-const menuItems = [
-    { id: 'home', label: 'Home', href: '/' },
-    { id: 'projects', label: 'Projects', href: '/projects' },
-    { id: 'services', label: 'Services', href: '/services' },
-    { id: 'store', label: 'Store', href: '/store' },
-    { id: 'blog', label: 'Blog', href: '/blog/' },
-    { id: 'cv', label: 'CV', href: '/cv' },
-    {
-        id: 'contact',
-        label: 'Contact',
-        href: 'mailto:contact.manuelernestog@gmail.com',
-        target: '_blank',
-        referrerPolicy: 'no-referrer-when-downgrade'
-    }
-] as const;
 
 function isActive(href: string) {
     if (href === '/') {
@@ -33,7 +16,7 @@ function isActive(href: string) {
 ---
 
 <ul class={styles.menu}>
-    {menuItems.map(({ id, label, href, ...rest }) => (
+    {navigation.navigation.map(({id, label, href, ...rest}) => (
             <li>
                 <a
                         class={`${styles.menuItem} ${

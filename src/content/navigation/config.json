@@ -1,0 +1,8 @@
+{
+  "navigation": [
+    {"id": "over", "label": "Over", "href": "/"},
+    {"id": "coaching", "label": "Coaching", "href": "/coaching"},
+    {"id": "advies", "label": "Advies", "href": "/advies"},
+    {"id": "blog", "label": "Blog", "href": "/blog/"}
+  ]
+}

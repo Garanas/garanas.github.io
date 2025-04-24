@@ -9,8 +9,8 @@
 }
 
 .menuItem {
-    padding-top: 0.75rem;   /* py-3 */
-    padding-bottom: 0.75rem;
+    padding: 1rem;
+    border-radius: 8px;
     font-size: 1rem;        /* text-base */
     text-decoration: none;
     display: block;

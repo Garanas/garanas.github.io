@@ -1,10 +1,9 @@
 .personContainer {
     display: flex;
     align-items: center;
-    width: 100%;
+    flex-grow: 0/1;
     padding: 1rem;
     gap: 1rem;
-    background-color: var(--base-100, #ffffff);
 }
 
 .profileImage {

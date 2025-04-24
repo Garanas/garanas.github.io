@@ -1,0 +1,11 @@
+---
+import client from '../../tina/__generated__/client';
+import HomePage from "../../tina/pages/HomePage.tsx";
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const data = await client.queries.page({relativePath: "advies.mdx"});
+---
+
+<BaseLayout >
+    <HomePage {...data} client:tina />
+</BaseLayout>

@@ -3,18 +3,20 @@
 import SideBarMenu from './SideBarMenu.astro';
 import SideBarFooter from './react/SideBarFooter';
 import styles from './SideBar.module.css';
-
-interface Props {
-    currentPath: string;
-}
-
-const { currentPath } = Astro.props;
+import Person from './Person.astro'
 ---
 
+<input type="checkbox" id="sidebar-toggle" class={styles.sidebarToggle}/>
+<label for="sidebar-toggle" class={styles.overlay}></label>
 <div class={styles.drawerSide}>
-    <label for="my-drawer" class={styles.drawerOverlay}></label>
     <aside class={styles.sidebar}>
-        <SideBarMenu currentPath={currentPath} />
-        <SideBarFooter />
+        <label for="sidebar-toggle" class={styles.toggleButton}>
+            <span class={styles.hamburger}></span>
+        </label>
+
+        <Person/>
+        <SideBarMenu/>
+        <SideBarFooter/>
     </aside>
 </div>
+
