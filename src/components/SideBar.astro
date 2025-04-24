@@ -1,0 +1,20 @@
+---
+// SideBar.astro
+import SideBarMenu from './SideBarMenu.astro';
+import SideBarFooter from './react/SideBarFooter';
+import styles from './SideBar.module.css';
+
+interface Props {
+    currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+---
+
+<div class={styles.drawerSide}>
+    <label for="my-drawer" class={styles.drawerOverlay}></label>
+    <aside class={styles.sidebar}>
+        <SideBarMenu currentPath={currentPath} />
+        <SideBarFooter />
+    </aside>
+</div>
