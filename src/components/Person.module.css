@@ -7,9 +7,9 @@
 }
 
 .profileImage {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
+    width: 96px;
+    height: 96px;
+    border-radius: 25%;
     object-fit: cover;
 }
 
