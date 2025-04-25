@@ -3,11 +3,9 @@
     display: grid;
     grid-template-columns: auto 1fr;
     min-height: 100vh;
-    background-color: var(--base-100);
 }
 
 .drawerContent {
-    background-color: var(--base-100);
 }
 
 .contentCenter {
