@@ -1,0 +1,35 @@
+name: Deploy to TransIP
+on:
+  push:
+    branches: [ deploy/transip ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: ./.github/workflows/build.yml
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: astro-dist
+          path: dist/
+
+      - name: Set up SSH deploy key
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SFTP_TRANSIP_PRIVATE_SSH }}
+
+      - name: Add TransIP host to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H ${{ secrets.SFTP_TRANSIP_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Sync dist → www on TransIP
+        run: |
+          rsync -av --delete \
+            dist/ \
+            ${{ secrets.SFTP_TRANSIP_USER }}@${{ secrets.SFTP_TRANSIP_HOST }}:www
