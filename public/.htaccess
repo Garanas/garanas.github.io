@@ -1,0 +1,25 @@
+<IfModule mod_headers.c>
+  # Prevent clickjacking
+  Header always set X-Frame-Options "DENY"
+
+  # Stop MIME-type sniffing
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Control what’s sent in Referer header
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Enforce HTTPS (2 years), include sub-domains, and preload
+  Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+
+  # Basic Content Security Policy: only allow resources from self
+  Header always set Content-Security-Policy "
+    default-src 'self';
+    script-src 'self';
+    style-src 'self';
+    img-src 'self';
+    font-src 'self';
+    connect-src 'self';
+    frame-ancestors 'none';
+    base-uri 'self';
+  "
+</IfModule>
