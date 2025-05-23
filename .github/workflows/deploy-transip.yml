@@ -28,8 +28,8 @@ jobs:
           mkdir -p ~/.ssh
           ssh-keyscan -H ${{ secrets.SFTP_TRANSIP_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Sync dist → /www on TransIP
+      - name: Sync dist → www on TransIP
         run: |
           rsync -av --delete \
             dist/ \
-            ${{ secrets.SFTP_TRANSIP_USER }}@${{ secrets.SFTP_TRANSIP_HOST }}:/www
+            ${{ secrets.SFTP_TRANSIP_USER }}@${{ secrets.SFTP_TRANSIP_HOST }}:www
