@@ -1,0 +1,13 @@
+@import url('fonts/lexend.css');
+@import url("custom.css");
+
+@import "tailwindcss";
+
+@theme {
+    --font-body: 'Lexend', sans-serif;
+    --font-sans: 'Lexend', sans-serif;
+    --font-mono: 'Lexend', sans-serif;
+    --font-serif: 'Lexend', sans-serif;
+}
+
+

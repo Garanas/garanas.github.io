@@ -1,11 +1,44 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+    <header class="max-w-5xl mx-auto pt-8 flex flex-col sm:flex-row p-2 place-content-center">
+        <div class="flex place-content-center">
+            <div>
+                <picture>
+                    <img
+                        src="/avatar-01.webp"
+                        alt="A male with a purple t-shirt in front of a green wall."
+                        width="256"
+                        height="256"
+                        loading="lazy"
+                        decoding="async"
+                        class="border rounded-xl"
+                    />
+                </picture>
+            </div>
+        </div>
+
+        <div class="flex-1/2 justify-items-center p-8">
+            <h1 class="text-6xl">Jip Wijnia</h1>
+            <p class="text-2xl">Software ontwikkelaar</p>
+            <p class="text-justify sm:p-2 ">
+                Mensgerichte softwareontwikkelaar met een sterke technische
+                basis en een natuurlijke aanleg voor communicatie en
+                samenwerking. Ik leer snel bij, hou van complexe technische
+                uitdagingen én werk graag in teams waar duidelijkheid, structuur
+                en een gezonde sfeer centraal staan.
+            </p>
+        </div>
+    </header>
+
+
+    <footer class="justify-items-center p-8">
+        <h2 class="text-2xl text-justify">Contact opnemen?</h2>
+
+        <p class="max-w-2xl text-justify">
+            Mail naar <a href="mailto:contact@jipwijnia.nl">contact@jipwijnia.nl</a> voor een fysieke afspraak met een kopje koffie, thee of gewoon water op locatie. Geen kosten van toepassing. Met voorkeur in regio Utrecht.
+        </p>
+    </footer>
 </Layout>
