@@ -1,7 +1,7 @@
 name: Deploy to TransIP
 on:
   push:
-  workflow_call:
+    branches: [ deploy/transip ]
   workflow_dispatch:
 
 jobs:
