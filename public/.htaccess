@@ -12,29 +12,23 @@
   Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
 
   # Basic Content Security Policy: only allow resources from self
-  Header always set Content-Security-Policy
-    default-src 'self';
-    script-src 'self';
-    style-src 'self';
-    img-src 'self';
-    font-src 'self';
-    connect-src 'self';
-    frame-ancestors 'none';
-    base-uri 'self';
-  "
+  Header always set Content-Security-Policy      "default-src 'self'; \
+    script-src 'self'; \
+    style-src 'self'; \
+    img-src 'self'; \
+    font-src 'self'; \
+    connect-src 'self'; \
+    frame-ancestors 'none'; \
+    base-uri 'self';"
 </IfModule>
 
 <IfModule mod_expires.c>
   ExpiresActive On
 
-  # ——————————————————————————————————————————————————————
   # HTML: revalidate daily
-  # ——————————————————————————————————————————————————————
   ExpiresByType text/html          "access plus 1 day"
 
-  # ——————————————————————————————————————————————————————
   # Images: cache for 1 week
-  # ——————————————————————————————————————————————————————
   ExpiresByType image/jpeg         "access plus 1 week"
   ExpiresByType image/png          "access plus 1 week"
   ExpiresByType image/gif          "access plus 1 week"
@@ -42,9 +36,7 @@
   ExpiresByType image/svg+xml      "access plus 1 week"
   ExpiresByType image/x-icon       "access plus 1 week"
 
-  # ——————————————————————————————————————————————————————
   # Fonts: cache for 1 month
-  # ——————————————————————————————————————————————————————
   ExpiresByType font/ttf           "access plus 1 month"
   ExpiresByType font/otf           "access plus 1 month"
   ExpiresByType font/woff          "access plus 1 month"
@@ -53,9 +45,7 @@
   ExpiresByType application/font-woff2  "access plus 1 month"
   ExpiresByType application/vnd.ms-fontobject "access plus 1 month"
 
-  # ——————————————————————————————————————————————————————
   # JS & CSS: cache “indefinitely” (1 year) — safe because filenames include a hash
-  # ——————————————————————————————————————————————————————
   ExpiresByType application/javascript  "access plus 1 year"
   ExpiresByType application/x-javascript "access plus 1 year"
   ExpiresByType text/javascript         "access plus 1 year"
