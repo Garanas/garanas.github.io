@@ -1,39 +1,55 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Author from "../components/home/Author.astro";
+import Service from "../components/home/Service.astro";
+import { getCollection } from 'astro:content';
+
+import MarkdownIt from 'markdown-it';
+
+// Initialize markdown-it
+const md = new MarkdownIt({
+    html: true,        // Enable HTML tags in source
+    breaks: true,      // Convert '\n' in paragraphs into <br>
+    linkify: true      // Autoconvert URL-like text to links
+});
+
+const services = await getCollection('services', ({ data }) => {
+    return data.isActive !== false;
+});
+
+// Sort services and parse their markdown content
+const sortedServices = services
+    .sort((a, b) => a.data.order - b.data.order)
+    .map(service => ({
+        ...service,
+        parsedContent: md.render(service.body)
+    }));
+
+
 ---
 
 <Layout>
-    <header class="max-w-5xl mx-auto pt-8 flex flex-col sm:flex-row p-2 place-content-center">
-        <div class="flex place-content-center">
-            <div>
-                <picture>
-                    <img
-                        src="/avatar-01.webp"
-                        alt="A male with a purple t-shirt in front of a green wall."
-                        width="256"
-                        height="256"
-                        loading="lazy"
-                        decoding="async"
-                        class="border rounded-xl"
-                    />
-                </picture>
+    <main class="flex flex-col lg:flex-row gap-6 p-6 justify-center">
+        <div class="flex-1/2 max-w-lg">
+            <Author />
+        </div>
+
+
+        <div class="max-w-3xl">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {sortedServices.map((service) => (
+                        <Service
+                                header={service.data.header}
+                                referenceLink={service.data.referenceLink}
+                                referenceLinkText={service.data.referenceLinkText}
+                        >
+                            <div class="prose prose-sm max-w-none" set:html={service.parsedContent} />
+                        </Service>
+                ))}
             </div>
         </div>
 
-        <div class="flex-1/2 justify-items-center p-8">
-            <h1 class="text-6xl">Jip Wijnia</h1>
-            <p class="text-2xl">Software ontwikkelaar</p>
-            <p class="text-justify sm:p-2 ">
-                Mensgerichte softwareontwikkelaar met een sterke technische
-                basis en een natuurlijke aanleg voor communicatie en
-                samenwerking. Ik leer snel bij, hou van complexe technische
-                uitdagingen én werk graag in teams waar duidelijkheid, structuur
-                en een gezonde sfeer centraal staan.
-            </p>
-        </div>
-    </header>
-
-
+    </main>
     <footer class="justify-items-center p-8">
         <h2 class="text-2xl text-justify">Contact opnemen?</h2>
 

@@ -4,7 +4,6 @@ import { glob, file } from 'astro/loaders'; // Not available with legacy API
 const experience = defineCollection({
     loader: glob({ pattern: "**/*.md", base: "./src/data/experience" }),
     schema: z.object({
-        title: z.string(),
         company: z.string(),
         companyURL: z.string().optional(),
 
@@ -18,4 +17,15 @@ const experience = defineCollection({
     })
 });
 
-export const collections = { experience };
+const services = defineCollection({
+    loader: glob({ pattern: "**/*.md", base: "./src/data/services" }),
+    schema: z.object({
+        header: z.string(),
+        referenceLink: z.string(),
+        referenceLinkText: z.string().default('Lees meer'),
+        order: z.number().default(999), // For controlling display order
+        isActive: z.boolean().default(true), // To easily enable/disable services
+    })
+});
+
+export const collections = { experience, services };
