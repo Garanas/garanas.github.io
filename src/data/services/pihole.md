@@ -5,8 +5,8 @@ referenceLinkText: "Lees meer"
 order: 3
 ---
 
-Het internet is soms gewoon druk. Advertenties links of rechts van de content. Advertenties aan beide zijkanten van de content. In een popup beneden, of over het hele scherm heen. Bewegende advertenties!
+Het internet kan behoorlijk onrustig zijn. Advertenties naast de content, aan beide zijkanten, in pop-ups onderin. Wat een drukte allemaal!
 
 <br>
 
-Dat kan anders!
+Dat is dus allemaal niet nodig. Het internet kan ook rustig zijn. Op elk apparaat, zonder verdere configuratie. Allemaal bij jou thuis. Wel zo fijn!

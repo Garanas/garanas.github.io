@@ -10,4 +10,4 @@ Hulp op maat voor studenten, zij-instromers of enthousiastelingen.
 
 <br>
 
-Of je nu meer wilt weten over functioneel programmeren, het schrijven van efficiënte code, het opzetten van een docker container of gewoon hulp met je huidige probleem.
+Of je nu meer wilt leren over functioneel programmeren, efficiënte code wilt schrijven, een Docker-container wilt opzetten of gewoon ondersteuning zoekt bij een concreet probleem — ik help je graag verder!

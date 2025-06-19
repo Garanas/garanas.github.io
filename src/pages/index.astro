@@ -5,6 +5,7 @@ import Service from "../components/home/Service.astro";
 import { getCollection } from 'astro:content';
 
 import MarkdownIt from 'markdown-it';
+import Footer from "../components/Footer.astro";
 
 // Initialize markdown-it
 const md = new MarkdownIt({
@@ -22,7 +23,7 @@ const sortedServices = services
     .sort((a, b) => a.data.order - b.data.order)
     .map(service => ({
         ...service,
-        parsedContent: md.render(service.body)
+        parsedContent: service.body ? md.render(service.body) : "No content"
     }));
 
 
@@ -36,25 +37,22 @@ const sortedServices = services
 
 
         <div class="max-w-3xl">
+            <h1 class="text-4xl p-4">Diensten</h1>
+
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {sortedServices.map((service) => (
-                        <Service
-                                header={service.data.header}
-                                referenceLink={service.data.referenceLink}
-                                referenceLinkText={service.data.referenceLinkText}
-                        >
-                            <div class="prose prose-sm max-w-none" set:html={service.parsedContent} />
-                        </Service>
+                    <Service
+                        header={service.data.header}
+                        referenceLink={service.data.referenceLink}
+                        referenceLinkText={service.data.referenceLinkText}
+                    >
+                        <div class="prose prose-sm max-w-none" set:html={service.parsedContent} />
+                    </Service>
                 ))}
             </div>
         </div>
 
     </main>
-    <footer class="justify-items-center p-8">
-        <h2 class="text-2xl text-justify">Contact opnemen?</h2>
 
-        <p class="max-w-2xl text-justify">
-            Mail naar <a href="mailto:contact@jipwijnia.nl">contact@jipwijnia.nl</a> voor een fysieke afspraak met een kopje koffie, thee of gewoon water op locatie. Geen kosten van toepassing. Met voorkeur in regio Utrecht.
-        </p>
-    </footer>
+    <Footer/>
 </Layout>

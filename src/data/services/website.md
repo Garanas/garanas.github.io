@@ -5,11 +5,12 @@ referenceLinkText: "Lees meer"
 order: 1
 ---
 
-Here you can write more detailed content about the service.
-This can include:
-- Detailed descriptions
-- Lists of features
-- Examples
-- Additional information
+Je eigen plek op het internet. Jij brengt de content, ik breng de expertise. 
 
-You can use **markdown** formatting here as well.
+<br>
+
+Een razend snelle website met extra rand functionaliteit. Inclusief het gereedschap zodat jij weet wat je website waard is voor je bedrijf. 
+
+<br>
+
+Inclusief de mogelijkheid voor extra digitale hulpmiddelen zoals een [wachtwoord manager](https://www.vaultwarden.ca/), het veilig delen van bestanden met klanten of een boekhoudingspakket.
